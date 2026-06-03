@@ -36,7 +36,7 @@ test('Test Case 2: Verify that user can select product categories', async ({ pro
 
 });
 
-test.only('Test Case 3: Verify that user can view product detail page', async ({ productPage, productDetailPage }) =>{
+test('Test Case 3: Verify that user can view product detail page', async ({ productPage, productDetailPage }) =>{
 
     const productItems = await productPage.productList.locator('.product-image-wrapper').all();
     const randomIndex = Math.floor(Math.random() * productItems.length);

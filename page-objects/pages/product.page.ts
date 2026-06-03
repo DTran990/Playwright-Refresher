@@ -7,6 +7,7 @@ export class productPage {
     readonly productList: Locator;
     readonly leftSidebar: Locator;
     readonly categoryList: Locator;
+    readonly modalContent: Locator;
 
     constructor( page: Page ) {
         this.page = page;
@@ -15,6 +16,7 @@ export class productPage {
         this.productList = page.locator('.features_items');
         this.leftSidebar = page.locator('.left-sidebar');
         this.categoryList = this.leftSidebar.locator('#accordian');
+        this.modalContent =page.locator('.modal-content');
     }
 
     async goto(){
