@@ -7,6 +7,8 @@ import { accountDeletedPage } from 'page-objects/pages/accountDeleted.page';
 import { productPage } from 'page-objects/pages/product.page';
 import { productDetailPage } from 'page-objects/pages/productDetail.page';
 import { cartPage } from 'page-objects/pages/cart.page';
+import { checkoutPage } from 'page-objects/pages/checkout.page';
+import { orderConfirmationPage } from 'page-objects/pages/orderConfirmation.page';
 
 type Fixtures = {
     LoginPage: LoginPage,
@@ -16,7 +18,9 @@ type Fixtures = {
     accountDeletedPage: accountDeletedPage,
     productPage: productPage,
     productDetailPage: productDetailPage,
-    cartPage: cartPage
+    cartPage: cartPage,
+    checkoutPage: checkoutPage,
+    orderConfirmationPage: orderConfirmationPage
 };
 
 export const test = base.extend<Fixtures> ({
@@ -43,6 +47,12 @@ export const test = base.extend<Fixtures> ({
     },
     cartPage: async({ page }, use) => {
         await use(new cartPage(page));
+    },
+    checkoutPage: async({ page }, use) => {
+        await use(new checkoutPage(page));
+    },
+    orderConfirmationPage: async({ page }, use) => {
+        await use(new orderConfirmationPage(page));
     }
 });
 

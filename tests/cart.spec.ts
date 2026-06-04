@@ -29,7 +29,7 @@ test('Test Case 1: Verify that user can add and remove products from cart ', asy
 });
 
 
-test.only('Test Case 2: Verify that user can add multiple products', async ({ page, productPage, cartPage }) =>{
+test('Test Case 2: Verify that user can add multiple products', async ({ page, productPage, cartPage }) =>{
 
     let productName: string[] = [];
     for (let i = 0; i < 3; i++) {
