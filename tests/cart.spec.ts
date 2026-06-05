@@ -4,6 +4,14 @@ test.beforeEach( async ({ productPage }) => {
     await productPage.goto();
 });
 
+test.afterEach( async ({ cartPage }) => {
+    await cartPage.goto();
+    const cartItems = await cartPage.cartTable.locator('.cart_delete a').all();
+    for (const item of cartItems) {
+        await item.click();
+    }
+});
+
 test('Test Case 1: Verify that user can add and remove products from cart ', async ({ page, productPage, cartPage }) =>{
 
     const productItems = await productPage.productList.locator('.product-image-wrapper').all();

@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures/page.fixture';
 
 let productName: string;
 
-test.beforeEach( async ({ LoginPage, productPage, cartPage,checkoutPage }) => {
+test.beforeEach( async ({ LoginPage, productPage, cartPage, checkoutPage }) => {
     
     const UserCredentials = {
         email: 'testertest@test.com',
@@ -21,6 +21,7 @@ test.beforeEach( async ({ LoginPage, productPage, cartPage,checkoutPage }) => {
     await cartPage.checkoutButton.click();
     
 });
+
 
 test('Test Case 1: Verify that user can place order successfully', async ({ checkoutPage,orderConfirmationPage }) =>{
 
